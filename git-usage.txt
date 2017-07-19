@@ -6,7 +6,7 @@ github使用
 4、创建ssh key：ssh-keygen -t rsa -C "460356155@qq.com"
 5、把C:\Users\xxxxx\.ssh目录中id_rsa.pub文件内容粘贴到github
 6、粘贴方法：github个人首页 - 'Edit Profile' - 'SSH and GPG keys' - 'New SSH key'，title随便填，内容粘到key
-7、测试key是否正常，github能否正常使用：ssh -v git@github.com
+7、测试key是否正常，github能否正常使用：ssh -v git@github.com     ssh -T git@github.com
 
 8、克隆仓库：找到首页（https://github.com/requests/requests）得到地址，git clone git@github.com:requests/requests
 9、git checkout -b localBranch 在本地创建一个分支
@@ -20,5 +20,11 @@ github使用
 17、git log --graph  查看log信息
 
 创建仓库
-18、进入目录 git init
-19、
+18、git config --global user.email "xxxx@qq.com"
+19、git config --global user.name "xxxx"
+20、进入目录 git init
+21、git add file
+22、git commit -m "xxxx"
+23、在github上创建仓库
+24、git remote add origin git@github.com:xxx/xxx
+25、git push origin master
