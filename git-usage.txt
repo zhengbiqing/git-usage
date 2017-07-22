@@ -1,30 +1,35 @@
-github使用
+git及github是当今最流行的代码版本管理系统，以下是整理的基本使用方法，也是我的一个操作实录（windows环境）：
 
-1、安装Git-2.8.1-64-bit.exe
-2、运行Git Bash，可以cd ls dir cd D: pwd mkdir等命令
+一、安装及账号申请
+
+1、安装Git-2.8.1-64-bit.exe，得到Git Bash
+2、运行Git Bash，可以用cd、ls、dir、cd D:、pwd、mkdir等命令
 3、在github上创建账号
-4、创建ssh key：ssh-keygen -t rsa -C "460356155@qq.com"
+4、创建ssh key：ssh-keygen -t rsa -C "xxxx@qq.com"
 5、把C:\Users\xxxxx\.ssh目录中id_rsa.pub文件内容粘贴到github
 6、粘贴方法：github个人首页 - 'Edit Profile' - 'SSH and GPG keys' - 'New SSH key'，title随便填，内容粘到key
-7、测试key是否正常，github能否正常使用：ssh -v git@github.com     ssh -T git@github.com
+7、测试key是否正常，github能否正常使用：ssh -v git@github.com  或  ssh -T git@github.com，如果输出中有“ You've successfully authenticated”，表明可正常使用github了。
 
-8、克隆仓库：找到首页（https://github.com/requests/requests）得到地址，git clone git@github.com:requests/requests
-9、git checkout -b localBranch 在本地创建一个分支
-10、从零开始获取远程库的某个tag   git clone --branch v0.2.0 git@github.com:requests/requests   
-11、本地已有某个版本远程库，切换到某个tag    git checkout v0.2.0
-12、git branch 查看本地分支  git branch dev 创建分支 git checkout dev 切换分支  git branch -d dev 删除分支
-13、git reflog 查看命令
-14、git tag 查看所有tag
-15、git show tag 查看tag信息
-16、git rev-parse HEAD 查看当前分支commit号
-17、git log --graph  查看log信息
+二、代码克隆及基本使用命令
 
-创建仓库
-18、git config --global user.email "xxxx@qq.com"
-19、git config --global user.name "xxxx"
-20、进入目录 git init
-21、git add file
-22、git commit -m "xxxx"
-23、在github上创建仓库
-24、git remote add origin git@github.com:xxx/xxx
-25、git push origin master
+1、 克隆仓库：找到代码仓库首页（如：https://github.com/requests/requests）得到地址，执行克隆命令：git clone git@github.com:requests/requests
+2、 git checkout -b localBranch 在本地创建一个分支
+3、从零开始获取远程库的某个tag：   git clone --branch v0.2.0 git@github.com:requests/requests 
+4、本地已有某个版本远程库，切换到某个tag：    git checkout v0.2.0
+5、git branch 查看本地分支 git branch dev 创建分支 git checkout dev 切换分支 git branch -d dev 删除分支
+6、git reflog 查看命令
+7、git tag 查看所有tag
+8、git show tag 查看tag信息
+9、git rev-parse HEAD 查看当前分支commit号
+10、git log --graph 查看log信息
+
+三、创建自己的代码仓库
+
+1、git config --global user.email "xxxx@qq.com"
+2、git config --global user.name "xxxx"
+3、进入目录 git init
+4、git add file
+5、git commit -m "xxxx"
+6、在github上创建仓库
+7、git remote add origin git@github.com:xxx/xxx
+8、git push -u origin master
